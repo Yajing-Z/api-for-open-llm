@@ -16,3 +16,4 @@ transformers_stream_generator
 cpm_kernels
 einops
 protobuf==4.25.3
+chardet
