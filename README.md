@@ -143,6 +143,19 @@ conda install pytorch cudatoolkit -c pytorch
 
 ```shell
 pip install -r requirements.txt
+
+# Check Torch is compiled with CUDA enabled
+>>> import torch
+>>> torch.__version__
+'1.12.1+cu102'
+>>> torch.zeros(1).cuda()
+tensor([0.], device='cuda:0')
+>>> torch.cuda.is_available()
+True
+
+# If the return is False, Torch not compiled with CUDA enabled. Then install torch with cuda again.
+pip uninstall torch
+pip install torch==2.2.0+cu121 --index-url https://download.pytorch.org/whl/cu121
 ```
 
 启动后端
